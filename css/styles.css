@@ -1,0 +1,134 @@
+﻿@font-face {
+    font-family: "Capture-it";
+    src: url('../fonts/Capture-it.woff') format('woff'),
+         url('../fonts/Capture-it.woff2') format('woff2');
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../img/blue_camo_background.jpg");
+    background-size: cover;
+}
+
+.container {
+    position: absolute; 
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.title {
+    color: white;
+    text-transform: capitalize;
+    text-align: center;
+    font-family: Capture-it, sans-serif;
+    font-size: 38px;
+    letter-spacing: 0.1em;
+    margin-bottom: 50px;
+    text-shadow: 0px 5px 5px rgba(0,0,0,0.4)
+}
+
+.form-group {
+    background-color: white;
+    display: flex;
+    width: 800px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 30px;
+    box-shadow: 0px 2px 4px 0px rgba(12,18,18,0.5);
+}
+
+.dropdown {
+    width: 200px;
+    margin-left: 20px;
+    padding-left: 5px;
+    border: 2px solid firebrick;
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: black;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.default-option {
+    margin-left: 8%;
+}
+
+.dropdown-list ul {
+    list-style: none;
+    background-color: white;
+    color: black;
+    position: absolute;
+    top: 48px;
+    left: 0px;
+    width: 150px;
+    border-radius: 5px;
+    /* display: none; */ /* TODO implement JQuery*/
+}
+
+.dropdown-list ul li {
+    padding: 10px 10px 10px 20px;
+}
+
+/* Dropdown downwards triangle*/
+.dropdown::before {
+    content: "";
+    border-width: 6px 6px 0 6px;
+    border-style: solid;
+    border-color: #1d1d1d transparent;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+}
+
+/* Dropdown list upwards triangle*/
+.dropdown-list ul li::before {
+    content: "";
+    border-width: 0 8px 8px 8px;
+    border-style: solid;
+    border-color: #fff transparent;
+    position: absolute;
+    bottom: 100%;
+    right: 20px;
+}
+
+.search-box {
+    width: 600px;
+    height: 100%;
+}
+
+.search-input {
+    width: 85%;
+    height: 100%;
+    margin-left: 20px;
+    padding: 0 10px;
+}
+
+.search {
+    width: 600px;
+    height: 100%;
+}
+
+.search-input {
+    width: 90%;
+    height: 100%;
+    border: 2px solid firebrick;
+    padding: 0 10px;
+    color: grey;
+}
+
+.btn {
+    background-color: white;
+    width: 50px;
+    height: 100%;
+    border: none;
+    margin-right: 20px;
+    cursor: pointer;
+}
