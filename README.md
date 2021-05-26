@@ -7,7 +7,7 @@
 * Selling military-grade weapons to anyone willing to buy them should be completely legal. This is, obviously, not in the developers' hands to decide, but is nevertheless a necessary requirement and this store concept is based on the proposition that this condition is true.
 
 # 2. Project Description
-The online store contains the following pages:
+The online store contains the following pages (you can find the Figma <a href="https://www.figma.com/file/G66aRUbO65k8scSnY9moq2/online-store?node-id=0%3A1">here</a>):
 
 * Homepage:
 ![Index](https://github.com/l-a-motta/online-store/blob/main/beta_images/index.png)
