@@ -10,8 +10,7 @@
 The online store contains the following pages:
 
 * Homepage:
-![Index](/beta_images/index.png)
-<img src="/beta_images/index.png" width="650" title="Index" alt="Index"></img>
+<img src="/beta_images/index.png" width="850" title="Index" alt="Index"></img>
 	* Header:
 		* Logo.
 	* Search box with two dropdowns and a text field:
@@ -26,12 +25,10 @@ The online store contains the following pages:
 	* Footer:
 		* Store admin login page link.
 * Weapon List:
-![Weapon List](/beta_images/weapon_list.png)
-<img src="/beta_images/weapon_list.png" width="650" title="Weapon List" alt="Weapon List"></img>
+<img src="/beta_images/weapon_list.png" width="850" title="Weapon List" alt="Weapon List"></img>
 	* Comprised of multiple cards from bootstrap, each displaying quick information about the weapon, as well as a button to see more information.
 * Weapon Information:
-![Weapon Information](/beta_images/weapon_information.png)
-<img src="/beta_images/weapon_information.png" width="650" title="Weapon Information" alt="Weapon Information"></img>
+<img src="/beta_images/weapon_information.png" width="850" title="Weapon Information" alt="Weapon Information"></img>
 	* Comprised of multiple DIVs for various informations about the selected weapon
 
 # 3. Comments about the code
