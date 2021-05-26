@@ -8,6 +8,7 @@
 
 # 2. Project Description
 The online store contains the following pages:
+<img src="/beta_images/index.png" width="350" title="Index" alt="Index">
 ![Index](/beta_images/index.png)
 * Homepage:
 	* Header:
