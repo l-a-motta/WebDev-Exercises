@@ -8,6 +8,7 @@
 
 # 2. Project Description
 The online store contains the following pages:
+![Index](/beta_images/index.png)
 * Homepage:
 	* Header:
 		* Logo.
@@ -22,7 +23,8 @@ The online store contains the following pages:
 			* Search criteria that doensn't correspond to any gun in stock returns "Not in stock / Not found".
 	* Footer:
 		* Store admin login page link.
-
+![Weapon List](/beta_images/weapon_list.png)
+![Wepaon Information](/beta_images/weapon_information.png)
 # 3. Comments about the code
 
 # 4. Test Plan
