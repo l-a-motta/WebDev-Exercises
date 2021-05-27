@@ -13,11 +13,42 @@
 body {
     background-image: url("../img/blue_camo_background.jpg");
     background-size: cover;
+    position: relative;
+    min-height: 100vh;
 }
+
+#content {
+    padding-bottom: 2.5rem; /* Footer height */
+}
+
+/* ------------------------ Header ------------------------ */
+
+header {
+    border-bottom: 10px;
+    text-align: center;
+    background: #8b8b8b;
+    color: rgb(22, 22, 22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header h1 {
+    padding: 15px 30px;
+    font-size: 40px;
+    text-transform: capitalize;
+}
+
+header img {
+    height: 70px;
+    object-fit: contain;
+}
+
+/* ---------------------- Search bar ----------------------- */
 
 .container {
     position: absolute; 
-    top: 20%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%,-50%);
 }
@@ -84,8 +115,8 @@ body {
     border-style: solid;
     border-color: #1d1d1d transparent;
     position: absolute;
-    right: 10px;
     top: 50%;
+    right: 10px; /* Triangle position */
 }
 
 /* Dropdown list upwards triangle*/
@@ -96,7 +127,7 @@ body {
     border-color: #fff transparent;
     position: absolute;
     bottom: 100%;
-    right: 20px;
+    right: 25px; /* Triangle position */
 }
 
 .search-box {
@@ -131,4 +162,20 @@ body {
     border: none;
     margin-right: 20px;
     cursor: pointer;
+}
+
+/*  ------------------------ Footer  ------------------------ */
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    text-align: center;
+    background-color: rgba(224, 224, 224, 0.658);
+}
+
+footer a {
+    display: inline-block;
+    vertical-align: middle;
 }
