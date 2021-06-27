@@ -11,6 +11,8 @@ The online store contains the following pages (you can find the Figma <a href="h
 The online store legally sells military-grade firearms.
 All the pages contain the same footer and header.
 
+PLEASE CHECK THE FOLDER "final_page" FOR THE SECOND DELIVERY.
+
 **Homepage**
 
 ![Index](https://github.com/l-a-motta/online-store/blob/main/beta_images/index.png)
