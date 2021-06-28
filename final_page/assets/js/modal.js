@@ -15,6 +15,17 @@ var span = document.getElementsByClassName("close")[0];
 function showModal(gun_id) {
   console.log(gun_id);
   modal.style.display = "block";
+
+  var requestURL = '../data/data.json';
+  var request = new XMLHttpRequest();
+  request.open('GET', requestURL);
+  request.responseType = 'json';
+  request.send();
+  request.onload = function() {
+    var json = request.response;
+    var data = JSON.parse(json);
+    console.log(JSON.stringify(data));
+  }
 }
 
 // When the user clicks on <span> (x), close the modal
