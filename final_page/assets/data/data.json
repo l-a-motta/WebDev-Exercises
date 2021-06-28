@@ -1,6 +1,12 @@
 {
     "guns": [
         {
+            "id": 0,
+            "name": "TEST",
+            "photo": "portfolio-0",
+            "type": "none"
+        },
+        {
             "id": 1,
             "name": "AK 47",
             "photo": "portfolio-1",

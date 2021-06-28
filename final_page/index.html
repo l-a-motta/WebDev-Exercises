@@ -101,12 +101,22 @@
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-auto filter-semi">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-none">
+            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-0.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>TEST</h4>
+              <p>TEST</p>
+              <a href="assets/img/portfolio/portfolio-0.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Auto 1"><i class="bx bx-plus"></i></a>
+              <a class="details-link" title="More Details" id="0" onclick="showModal(this.id)"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-auto">
             <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
               <h4>Auto 1</h4>
               <p>Auto</p>
-              <a href="assets/img/portfolio/portfolio-details-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Auto 1"><i class="bx bx-plus"></i></a>
+              <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Auto 1"><i class="bx bx-plus"></i></a>
               <a class="details-link" title="More Details" id="1" onclick="showModal(this.id)"><i class="bx bx-link"></i></a>
             </div>
           </div>
@@ -213,11 +223,11 @@
                   <div class="swiper-wrapper align-items-center">
     
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/portfolio-1.jpg" alt="">
+                      <img src="" alt="" id="gunImage1">
                     </div>
     
                     <div class="swiper-slide">
-                      <img src="assets/img/portfolio/portfolio-1.jpg" alt="">
+                      <img src="" alt="" id="gunImage2">
                     </div>
     
                   </div>
@@ -227,8 +237,8 @@
     
               <div class="col-lg-4">
                 <div class="portfolio-info">
-                  <h3>Project information</h3>
-                  <ul>
+                  <h3>Gun information</h3>
+                  <ul id="gunInfo">
                     <li><strong>Weapon's mass</strong>: 10.5 kg (23.15 lb) </li>
                     <li><strong>Length</strong>: 1,105 mm (43.5 in) </li>
                     <li><strong>Barrel length</strong>: 560 mm (22.0 in) </li>
@@ -242,14 +252,14 @@
                     <li><strong>Feed system</strong>: Disintegrating belt with M13 Links </li>
                     <li><strong>Sights</strong>: Iron sights </li>
                     <li><strong>Manufacturer</strong>: Saco Defense, U.S. Ordnance </li>
-                    <li><strong>Buy directly</strong>: <a href="#">www.example.com</a></li>
+                    <li><strong>Buy directly</strong>: <a href="https://www.google.com">www.google.com</a></li>
                     <hr>
-                    <div class = "audio">
-                      <audio controls>
-                        <source src ="assets/audio/M_60_Machine_Gun_Sound_effect.mp3" type = "audio/mpeg">
-                      </audio>
-                    </div>
                   </ul>
+                  <div class = "audio">
+                    <audio controls>
+                      <source src ="assets/audio/M_60_Machine_Gun_Sound_effect.mp3" type = "audio/mpeg" id="gunSound">
+                    </audio>
+                  </div>
                 </div>
               </div>
     
