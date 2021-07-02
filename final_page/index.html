@@ -10,8 +10,12 @@
   <meta content="guns, sell, market, weapons, shoot" name="keywords">
 
   <!-- Google Fonts and CDNs -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -66,7 +70,9 @@
         <div class="row">
           <div class="col-lg-9 text-center text-lg-start">
             <h3>Some description of the gun store</h3>
-            <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+              laborum.</p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
             <a class="cta-btn align-middle" onclick="showCart(99)">Shopping Cart</a>
@@ -82,14 +88,16 @@
 
         <div class="section-title">
           <h2>Gun List</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+            consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
+            in iste officiis commodi quidem hic quas.</p>
         </div>
 
         <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
           <!-- If you want a new filter, simply add them here in the same format: data-filter = ".filter-YOUR_FILTER_HERE" 
           And then give the div class of the object that has that desired tag the following class: "filter-YOUR_FILTER_HERE"
           You can use multiple tags in the same product for filtering as well, following the same logic and adding the other class with the extra filter name-->
-          
+
           <li data-filter="*" class="filter-active">All</li>
           <li data-filter=".filter-auto">Auto</li>
           <li data-filter=".filter-semi">Semiauto</li>
@@ -112,26 +120,26 @@
 
         <section id="portfolio-details" class="portfolio-details">
           <div class="container">
-    
+
             <div class="row gy-4">
-    
+
               <div class="col-lg-8">
                 <div class="portfolio-details-slider swiper-container">
                   <div class="swiper-wrapper align-items-center">
-    
+
                     <div class="swiper-slide">
                       <img src="" alt="" id="gunImage1">
                     </div>
-    
+
                     <div class="swiper-slide">
                       <img src="" alt="" id="gunImage2">
                     </div>
-    
+
                   </div>
                   <div class="swiper-pagination"></div>
                 </div>
               </div>
-    
+
               <div class="col-lg-4">
                 <div class="portfolio-info">
                   <h3 id="gunName">Gun Name</h3>
@@ -152,16 +160,16 @@
                     <li><strong>Buy directly</strong>: <a href="https://www.google.com">www.google.com</a></li>
                     <hr>
                   </ul>
-                  <div class = "audio">
+                  <div class="audio">
                     <audio controls>
-                      <source src ="assets/audio/M_60_Machine_Gun_Sound_effect.mp3" type = "audio/mpeg" id="gunSound">
+                      <source src="assets/audio/M_60_Machine_Gun_Sound_effect.mp3" type="audio/mpeg" id="gunSound">
                     </audio>
                   </div>
                 </div>
               </div>
-    
+
             </div>
-    
+
           </div>
         </section>
 
@@ -175,11 +183,78 @@
       <!-- Shopping Cart content -->
       <div class="modal-content">
         <span class="close">&times;</span>
-        <p id="cart">THIS IS BEFORE CHANGE</p>
 
-      </div>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col" class="border-0 bg-light">
+                  <div class="p-2 px-3 text-uppercase">Product</div>
+                </th>
+                <th scope="col" class="border-0 bg-light">
+                  <div class="py-2 text-uppercase">Price</div>
+                </th>
+                <th scope="col" class="border-0 bg-light">
+                  <div class="py-2 text-uppercase">Quantity</div>
+                </th>
+                <th scope="col" class="border-0 bg-light">
+                  <div class="py-2 text-uppercase">Remove</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="border-0">
+                  <div class="p-2">
+                    <img src="https://res.cloudinary.com/mhmd/image/upload/v1556670479/product-1_zrifhn.jpg" alt=""
+                      width="70" class="img-fluid rounded shadow-sm">
+                    <div class="ml-3 d-inline-block align-middle">
+                      <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">Timex Unisex
+                          Originals</a></h5><span class="text-muted font-weight-normal font-italic d-block">Category:
+                        Watches</span>
+                    </div>
+                  </div>
+                </th>
+                <td class="border-0 align-middle"><strong>$79.00</strong></td>
+                <td class="border-0 align-middle"><strong>3</strong></td>
+                <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <div class="p-2">
+                    <img src="https://res.cloudinary.com/mhmd/image/upload/v1556670479/product-3_cexmhn.jpg" alt=""
+                      width="70" class="img-fluid rounded shadow-sm">
+                    <div class="ml-3 d-inline-block align-middle">
+                      <h5 class="mb-0"><a href="#" class="text-dark d-inline-block">Lumix camera lense</a></h5><span
+                        class="text-muted font-weight-normal font-italic">Category: Electronics</span>
+                    </div>
+                  </div>
+                </th>
+                <td class="align-middle"><strong>$79.00</strong></td>
+                <td class="align-middle"><strong>3</strong></td>
+                <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <div class="p-2">
+                    <img src="https://res.cloudinary.com/mhmd/image/upload/v1556670479/product-2_qxjis2.jpg" alt=""
+                      width="70" class="img-fluid rounded shadow-sm">
+                    <div class="ml-3 d-inline-block align-middle">
+                      <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">Gray Nike running shoe</a></h5>
+                      <span class="text-muted font-weight-normal font-italic">Category: Fashion</span>
+                    </div>
+                  </div>
+                <td class="align-middle"><strong>$79.00</strong></td>
+                <td class="align-middle"><strong>3</strong></td>
+                <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-    </div><!-- End Shopping Cart Modal Div -->
+      </div><!-- End Shopping Cart Modal Div -->
 
   </main><!-- End #main -->
 
@@ -193,7 +268,8 @@
     </div>
   </footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
