@@ -3,7 +3,6 @@ const json = '{ "guns": [ { "id": 0, "name": "TEST", "photo": "portfolio-0", "ty
 
 // Populate portfolio/gunList with all elements from the array
 var data = JSON.parse(json);
-
 jQuery.each(data.guns, function (key, val) {
 
   $("#gunList").append('<div class="col-lg-4 col-md-6 portfolio-item filter-' + val.type + '">' +

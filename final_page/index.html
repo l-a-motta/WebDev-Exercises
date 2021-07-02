@@ -9,7 +9,7 @@
   <meta content="We sell guns" name="description">
   <meta content="guns, sell, market, weapons, shoot" name="keywords">
 
-  <!-- Google Fonts and Other -->
+  <!-- Google Fonts and CDNs -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -69,7 +69,7 @@
             <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="#">Contact</a>
+            <a class="cta-btn align-middle" onclick="showCart(99)">Shopping Cart</a>
           </div>
         </div>
 
@@ -169,6 +169,18 @@
 
     </div><!-- End Modal Div -->
 
+    <!-- The Shopping Cart Modal -->
+    <div id="myCart" class="modal">
+
+      <!-- Shopping Cart content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="cart">THIS IS BEFORE CHANGE</p>
+
+      </div>
+
+    </div><!-- End Shopping Cart Modal Div -->
+
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -193,7 +205,8 @@
 
   <!-- Template JS Files -->
   <script src="assets/js/main.js"></script>
-    <script src="assets/js/modal.js"></script>
+  <script src="assets/js/modal.js"></script>
+  <script src="assets/js/cart.js"></script>
 
 </body>
 
