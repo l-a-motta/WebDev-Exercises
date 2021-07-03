@@ -1,4 +1,24 @@
-(function() {
+// Temporary JSON
+const json = '{ "guns": [ { "id": 0, "name": "TEST", "photo": "portfolio-0", "type": "none" }, { "id": 1, "name": "M60", "photo": "portfolio-1", "type": "auto" }, { "id": 2, "name": "Old Musket", "photo": "portfolio-2", "type": "manual" }, { "id": 3, "name": "SP2022", "photo": "portfolio-3", "type": "semi" }, { "id": 4, "name": "M4", "photo": "portfolio-4", "type": "auto" }, { "id": 5, "name": "Magnum 44", "photo": "portfolio-5", "type": "semi" }, { "id": 6, "name": "M4A1", "photo": "portfolio-6", "type": "auto" }, { "id": 7, "name": "MP5", "photo": "portfolio-7", "type": "auto" }, { "id": 8, "name": "STNGR", "photo": "portfolio-8", "type": "auto" }, { "id": 9, "name": "AK 47", "photo": "portfolio-9", "type": "auto" } ] }';
+
+// Populate portfolio/gunList with all elements from the array
+var data = JSON.parse(json);
+jQuery.each(data.guns, function (key, val) {
+
+  $("#gunList").append('<div class="col-lg-4 col-md-6 portfolio-item filter-' + val.type + '">' +
+    '<div class="portfolio-img"><img src="assets/img/portfolio/' + val.photo + '.jpg" class="img-fluid" alt=""></div>' +
+    '<div class="portfolio-info">' +
+    '<h4>' + val.name + '</h4>' +
+    '<p>' + val.type + '</p>' +
+    '<a href="assets/img/portfolio/' + val.photo + '.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="' + val.name + '"><i class="bx bx-plus"></i></a>' +
+    '<a class="details-link" title="More Details" id="' + val.id + '" onclick="showModal(this.id)"><i class="bx bx-link"></i></a>' +
+    '</div>' +
+    '</div>');
+
+});
+
+
+(function () {
   "use strict";
 
   /**
@@ -103,7 +123,7 @@
   /**
    * Scrool with ofset on links with a class name .scrollto
    */
-  on('click', '.scrollto', function(e) {
+  on('click', '.scrollto', function (e) {
     if (select(this.hash)) {
       e.preventDefault()
 
@@ -140,6 +160,7 @@
    * Porfolio isotope and filter
    */
   window.addEventListener('load', () => {
+
     let portfolioContainer = select('.portfolio-container');
     if (portfolioContainer) {
       let portfolioIsotope = new Isotope(portfolioContainer, {
@@ -148,9 +169,9 @@
 
       let portfolioFilters = select('#portfolio-flters li', true);
 
-      on('click', '#portfolio-flters li', function(e) {
+      on('click', '#portfolio-flters li', function (e) {
         e.preventDefault();
-        portfolioFilters.forEach(function(el) {
+        portfolioFilters.forEach(function (el) {
           el.classList.remove('filter-active');
         });
         this.classList.add('filter-active');
@@ -158,7 +179,7 @@
         portfolioIsotope.arrange({
           filter: this.getAttribute('data-filter')
         });
-        portfolioIsotope.on('arrangeComplete', function() {
+        portfolioIsotope.on('arrangeComplete', function () {
           AOS.refresh()
         });
       }, true);

@@ -9,8 +9,13 @@
   <meta content="We sell guns" name="description">
   <meta content="guns, sell, market, weapons, shoot" name="keywords">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <!-- Google Fonts and CDNs -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -45,13 +50,9 @@
           <li class="dropdown"><a href="#"><span>Easy Filter</span> <i class="bi bi-chevron-down"></i></a>
             <ul id="portfolio-flters">
               <li data-filter="*"><a href="#">All guns</a></li>
-              <li data-filter=".filter-auto"><a href="#">Handguns</a></li>
-              <li data-filter=".filter-semi"><a href="#">Rifles</a></li>
-              <li data-filter=".filter-manual"><a href="#">Shotguns</a></li>
-              <li data-filter=".filter-auto"><a href="#">Carbines</a></li>
-              <li data-filter=".filter-semi"><a href="#">Machine guns</a></li>
-              <li data-filter=".filter-manual"><a href="#">Sniper rifles</a></li>
-              <li data-filter=".filter-auto"><a href="#">Submachine guns</a></li>
+              <li data-filter=".filter-auto"><a href="#">Auto</a></li>
+              <li data-filter=".filter-semi"><a href="#">Semi</a></li>
+              <li data-filter=".filter-manual"><a href="#">Manual</a></li>
             </ul>
           </li>
           <li><a class="getstarted scrollto" href="#portfolio">Get Shooting!</a></li>
@@ -69,10 +70,12 @@
         <div class="row">
           <div class="col-lg-9 text-center text-lg-start">
             <h3>Some description of the gun store</h3>
-            <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+              laborum.</p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="#">Contact</a>
+            <a class="cta-btn align-middle" onclick="showCart()">Shopping Cart</a>
           </div>
         </div>
 
@@ -85,121 +88,23 @@
 
         <div class="section-title">
           <h2>Gun List</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+            consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
+            in iste officiis commodi quidem hic quas.</p>
         </div>
 
         <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
           <!-- If you want a new filter, simply add them here in the same format: data-filter = ".filter-YOUR_FILTER_HERE" 
           And then give the div class of the object that has that desired tag the following class: "filter-YOUR_FILTER_HERE"
           You can use multiple tags in the same product for filtering as well, following the same logic and adding the other class with the extra filter name-->
-          
+
           <li data-filter="*" class="filter-active">All</li>
           <li data-filter=".filter-auto">Auto</li>
           <li data-filter=".filter-semi">Semiauto</li>
           <li data-filter=".filter-manual">Manual</li>
         </ul>
 
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-none">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-0.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>TEST</h4>
-              <p>TEST</p>
-              <a href="assets/img/portfolio/portfolio-0.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Auto 1"><i class="bx bx-plus"></i></a>
-              <a class="details-link" title="More Details" id="0" onclick="showModal(this.id)"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-auto">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Auto 1</h4>
-              <p>Auto</p>
-              <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Auto 1"><i class="bx bx-plus"></i></a>
-              <a class="details-link" title="More Details" id="1" onclick="showModal(this.id)"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-manual">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Manual 1</h4>
-              <p>Manual</p>
-              <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Manual 1"><i class="bx bx-plus"></i></a>
-              <a class="details-link" title="More Details" id="2" onclick="showModal(this.id)"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-auto">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Auto 2</h4>
-              <p>Auto</p>
-              <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Auto 2"><i class="bx bx-plus"></i></a>
-              <a class="details-link" title="More Details" id="3" onclick="showModal(this.id)"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-semi">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Semi 2</h4>
-              <p>Semi</p>
-              <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Semi 2"><i class="bx bx-plus"></i></a>
-              <a class="details-link" title="More Details" id="4" onclick="showModal(this.id)"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-manual">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Manual 2</h4>
-              <p>Manual</p>
-              <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Manual 2"><i class="bx bx-plus"></i></a>
-              <a class="details-link" title="More Details" id="5" onclick="showModal(this.id)"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-auto">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Auto 3</h4>
-              <p>Auto</p>
-              <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Auto 3"><i class="bx bx-plus"></i></a>
-              <a class="details-link" title="More Details" id="6" onclick="showModal(this.id)"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-semi">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Semi 1</h4>
-              <p>Semi</p>
-              <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Semi 1"><i class="bx bx-plus"></i></a>
-              <a class="details-link" title="More Details" id="7" onclick="showModal(this.id)"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-semi">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Semi 3</h4>
-              <p>Semi</p>
-              <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Semi 3"><i class="bx bx-plus"></i></a>
-              <a class="details-link" title="More Details" id="8" onclick="showModal(this.id)"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-manual">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Manual 3</h4>
-              <p>Manual</p>
-              <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Manual 3"><i class="bx bx-plus"></i></a>
-              <a class="details-link" title="More Details" id="9" onclick="showModal(this.id)"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200" id="gunList">
 
         </div>
 
@@ -215,29 +120,33 @@
 
         <section id="portfolio-details" class="portfolio-details">
           <div class="container">
-    
+
             <div class="row gy-4">
-    
+
               <div class="col-lg-8">
                 <div class="portfolio-details-slider swiper-container">
                   <div class="swiper-wrapper align-items-center">
-    
+
                     <div class="swiper-slide">
                       <img src="" alt="" id="gunImage1">
                     </div>
-    
+
                     <div class="swiper-slide">
                       <img src="" alt="" id="gunImage2">
                     </div>
-    
+
                   </div>
                   <div class="swiper-pagination"></div>
                 </div>
               </div>
-    
+
               <div class="col-lg-4">
                 <div class="portfolio-info">
-                  <h3>Gun information</h3>
+                  <h6 id="gunId">-1</h6>
+                  <h3 id="gunName">Gun Name</h3>
+                  <div class="col-lg-12 pb-3 text-center">
+                    <button class="btn btn-primary" onclick="addCart()">Add to cart</button>
+                  </div>
                   <ul id="gunInfo">
                     <li><strong>Weapon's mass</strong>: 10.5 kg (23.15 lb) </li>
                     <li><strong>Length</strong>: 1,105 mm (43.5 in) </li>
@@ -255,22 +164,54 @@
                     <li><strong>Buy directly</strong>: <a href="https://www.google.com">www.google.com</a></li>
                     <hr>
                   </ul>
-                  <div class = "audio">
+                  <div class="col-lg-12 text-center">
                     <audio controls>
-                      <source src ="assets/audio/M_60_Machine_Gun_Sound_effect.mp3" type = "audio/mpeg" id="gunSound">
+                      <source src="assets/audio/M_60_Machine_Gun_Sound_effect.mp3" type="audio/mpeg" id="gunSound">
                     </audio>
                   </div>
                 </div>
               </div>
-    
+
             </div>
-    
+
           </div>
         </section>
 
       </div>
 
     </div><!-- End Modal Div -->
+
+    <!-- The Shopping Cart Modal -->
+    <div id="myCart" class="modal">
+
+      <!-- Shopping Cart content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col" class="border-0 bg-light">
+                  <div class="p-2 px-3 text-uppercase">Product</div>
+                </th>
+                <th scope="col" class="border-0 bg-light">
+                  <div class="py-2 text-uppercase">Price</div>
+                </th>
+                <th scope="col" class="border-0 bg-light">
+                  <div class="py-2 text-uppercase">Quantity</div>
+                </th>
+                <th scope="col" class="border-0 bg-light">
+                  <div class="py-2 text-uppercase">Remove</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody id="cartList">
+            </tbody>
+          </table>
+        </div>
+
+      </div><!-- End Shopping Cart Modal Div -->
 
   </main><!-- End #main -->
 
@@ -284,7 +225,8 @@
     </div>
   </footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
@@ -295,8 +237,9 @@
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
 
   <!-- Template JS Files -->
-  <script src="assets/js/design.js"></script>
+  <script src="assets/js/main.js"></script>
   <script src="assets/js/modal.js"></script>
+  <script src="assets/js/cart.js"></script>
 
 </body>
 
