@@ -18,6 +18,7 @@ span.onclick = function () {
 var data = JSON.parse(json);
 
 function addCart() {
+    document.getElementById("myModal").style.display = "none";
     var gun_id = document.getElementById("gunId").innerHTML;
     jQuery.each(data.guns, function (key, val) {
 
@@ -43,4 +44,5 @@ function addCart() {
         }
 
     });
+    showCart();
 }
