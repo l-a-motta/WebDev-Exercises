@@ -75,7 +75,7 @@
               laborum.</p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" onclick="showCart(99)">Shopping Cart</a>
+            <a class="cta-btn align-middle" onclick="showCart()">Shopping Cart</a>
           </div>
         </div>
 
@@ -142,6 +142,7 @@
 
               <div class="col-lg-4">
                 <div class="portfolio-info">
+                  <h6 id="gunId">-1</h6>
                   <h3 id="gunName">Gun Name</h3>
                   <ul id="gunInfo">
                     <li><strong>Weapon's mass</strong>: 10.5 kg (23.15 lb) </li>
@@ -164,6 +165,9 @@
                     <audio controls>
                       <source src="assets/audio/M_60_Machine_Gun_Sound_effect.mp3" type="audio/mpeg" id="gunSound">
                     </audio>
+                  </div>
+                  <div class="col-lg-3 cta-btn-container text-center">
+                    <a class="cta-btn align-middle" onclick="addCart()">Shopping Cart</a>
                   </div>
                 </div>
               </div>
@@ -203,20 +207,6 @@
               </tr>
             </thead>
             <tbody id="cartList">
-              <tr>
-                <th scope="row" class="border-0">
-                  <div class="p-2">
-                    <img src="assets/img/portfolio/portfolio-1.jpg" alt="" class="img-fluid" width="100px">
-                    <div class="ml-3 d-inline-block align-middle">
-                      <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">Timex Unisex Originals</a> </h5>
-                      <span class="text-muted font-weight-normal font-italic d-block">Category: Watches</span>
-                    </div>
-                  </div>
-                </th>
-                <td class="border-0 align-middle"><strong>$79.00</strong></td>
-                <td class="border-0 align-middle"><strong>3</strong></td>
-                <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
-              </tr>
             </tbody>
           </table>
         </div>
