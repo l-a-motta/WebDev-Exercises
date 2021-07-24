@@ -5,15 +5,16 @@ const json = '{ "guns": [ { "id": 0, "name": "TEST", "photo": "portfolio-0", "ty
 var data = JSON.parse(json);
 jQuery.each(data.guns, function (key, val) {
 
-  $("#gunList").append('<div class="col-lg-4 col-md-6 portfolio-item filter-' + val.type + '">' +
-    '<div class="portfolio-img"><img src="/img/portfolio/' + val.photo + '.jpg" class="img-fluid" alt=""></div>' +
-    '<div class="portfolio-info">' +
-    '<h4>' + val.name + '</h4>' +
-    '<p>' + val.type + '</p>' +
-    '<a href="/img/portfolio/' + val.photo + '.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="' + val.name + '"><i class="bx bx-plus"></i></a>' +
-    '<a class="details-link" title="More Details" id="' + val.id + '" onclick="showModal(this.id)"><i class="bx bx-link"></i></a>' +
-    '</div>' +
-    '</div>');
+  // Momentary comment to test other way of showing guns
+  // $("#gunList").append('<div class="col-lg-4 col-md-6 portfolio-item filter-' + val.type + '">' +
+  //   '<div class="portfolio-img"><img src="/img/portfolio/' + val.photo + '.jpg" class="img-fluid" alt=""></div>' +
+  //   '<div class="portfolio-info">' +
+  //   '<h4>' + val.name + '</h4>' +
+  //   '<p>' + val.type + '</p>' +
+  //   '<a href="/img/portfolio/' + val.photo + '.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="' + val.name + '"><i class="bx bx-plus"></i></a>' +
+  //   '<a class="details-link" title="More Details" id="' + val.id + '" onclick="showModal(this.id)"><i class="bx bx-link"></i></a>' +
+  //   '</div>' +
+  //   '</div>');
 
 });
 

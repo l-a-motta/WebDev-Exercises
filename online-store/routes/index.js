@@ -3,19 +3,30 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
-/* GET list gun page. */
-router.get('/gunlist', function (req, res) {
   var db = req.db;
   var collection = db.get('usercollection');
-  collection.find({}, {}, function (e, docs) {
-    res.render('gunlist', {
+  collection.find({}, {}, function (e, docs) 
+  {
+    res.render('index', 
+    {
       "gunlist": docs
     });
   });
 });
+
+/* GET list gun page. */
+// Currently unnecessary, the list is already shown on the index page right above
+// router.get('/gunlist', function (req, res) {
+//   var db = req.db;
+//   var collection = db.get('usercollection');
+//   collection.find({}, {}, function (e, docs) 
+//   {
+//     res.render('gunlist', 
+//     {
+//       "gunlist": docs
+//     });
+//   });
+// });
 
 /* GET new gun page. */
 // Currently unnecessary, the form to add a gun is already on the index page
@@ -53,7 +64,7 @@ router.post('/addgun', function (req, res) {
     }
     else {
       // And forward to success page
-      res.redirect("gunlist");
+      res.redirect("/");
     }
   });
 
