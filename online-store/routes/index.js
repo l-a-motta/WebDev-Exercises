@@ -22,4 +22,9 @@ router.get('/gunlist', function(req, res) {
   });
 });
 
+/* GET New gun page. */
+router.get('/newgun', function(req, res) {
+  res.render('newgun', { title: 'Add New gun' });
+});
+
 module.exports = router;
