@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/css/style.css' />
-</head>
-
-<body>
+<%- include('include/header.ejs') %>
+<%- include('include/cta.ejs') %>
     <h1>
         Add a new gun
     </h1>
@@ -39,6 +32,5 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-</body>
 
-</html>
+<%- include('include/footer.ejs') %>
