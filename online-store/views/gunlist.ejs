@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Gun List</h1>
+    <ul>
+      <%
+        var list = '';
+        for (i = 0; i < gunlist.length; i++) {
+          list += '<li><a href="https://www.google.com/search?q=' + gunlist[i].name + '">' + gunlist[i].name + '</a></li>';
+        }
+      %>
+      <%- list %>
+    </ul>
+  </body>
+</html>
