@@ -18,9 +18,10 @@ router.get('/gunlist', function (req, res) {
 });
 
 /* GET new gun page. */
-router.get('/addgun', function (req, res) {
-  res.render('addgun', { title: 'Add New gun' });
-});
+// Currently unnecessary, the form to add a gun is already on the index page
+// router.get('/addgun', function (req, res) {
+//   res.render('addgun', { title: 'Add New gun' });
+// });
 
 /* POST to add new gun */
 router.post('/addgun', function (req, res) {
