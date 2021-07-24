@@ -29,7 +29,7 @@ function addCart() {
             '<tr id="gun-'+val.id+'">' +
                 '<th scope = "row" class= "border-0" >' +
                 '<div class="p-2">' +
-                    '<img src="assets/img/portfolio/'+val.photo+'.jpg" alt="" class="img-fluid" width="100px" style="padding-right:15px;">' +
+                    '<img src="/img/portfolio/'+val.photo+'.jpg" alt="" class="img-fluid" width="100px" style="padding-right:15px;">' +
                     '<div class="ml-3 d-inline-block align-middle">' +
                     '<h5 class="mb-0"> <a class="text-dark d-inline-block align-middle">'+val.name+'</a> </h5>' +
                     '<span class="text-muted font-weight-normal font-italic d-block">'+val.type+'</span>' +

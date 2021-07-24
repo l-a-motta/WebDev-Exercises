@@ -10,8 +10,8 @@ function showModal(gun_id) {
   var data = JSON.parse(json);
 
   // Need to change each gunImage1 (just change src), gunImage2 (just change src), gunInfo (change whole HTML), soundInfo (just change src)...
-  document.getElementById("gunImage1").src = 'assets/img/portfolio/'+data.guns[gun_id].photo+'.jpg';
-  document.getElementById("gunImage2").src = 'assets/img/portfolio/'+data.guns[gun_id].photo+'.jpg';
+  document.getElementById("gunImage1").src = '/img/portfolio/'+data.guns[gun_id].photo+'.jpg';
+  document.getElementById("gunImage2").src = '/img/portfolio/'+data.guns[gun_id].photo+'.jpg';
   document.getElementById("gunName").innerHTML = data.guns[gun_id].name;
   document.getElementById("gunId").innerHTML = data.guns[gun_id].id;
 
