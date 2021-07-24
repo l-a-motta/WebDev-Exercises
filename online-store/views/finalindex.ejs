@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Gun Store</title>
+  <meta content="We sell guns" name="description">
+  <meta content="guns, sell, market, weapons, shoot" name="keywords">
+
+  <!-- Google Fonts and CDNs -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <!-- Vendor CSS Files -->
+  <link href="/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template CSS Files -->
+  <link href="/css/style.css" rel="stylesheet">
+  <link href="/css/modal.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html">Guns</a></h1>
+
+      <nav id="navbar" class="navbar">
+        <!-- <div class="search-box">
+          <input type="text" class="search-input" placeholder="Other criteria, ex: .45 Magnum" />
+        </div> -->
+        <ul>
+          <li><a class="nav-link scrollto active" href="#">Home</a></li>
+          <li><a class="nav-link   scrollto" href="#portfolio">Gun List</a></li>
+          <li class="dropdown"><a href="#"><span>Easy Filter</span> <i class="bi bi-chevron-down"></i></a>
+            <ul id="portfolio-flters">
+              <li data-filter="*"><a href="#">All guns</a></li>
+              <li data-filter=".filter-auto"><a href="#">Auto</a></li>
+              <li data-filter=".filter-semi"><a href="#">Semi</a></li>
+              <li data-filter=".filter-manual"><a href="#">Manual</a></li>
+            </ul>
+          </li>
+          <li><a class="getstarted scrollto" href="#portfolio">Get Shooting!</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+    <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+      <div class="container" data-aos="zoom-in">
+
+        <div class="row">
+          <div class="col-lg-9 text-center text-lg-start">
+            <h3>Some description of the gun store</h3>
+            <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+              laborum.</p>
+          </div>
+          <div class="col-lg-3 cta-btn-container text-center">
+            <a class="cta-btn align-middle" onclick="showCart()">Shopping Cart</a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Cta Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container" data-aos="fade-up">
+
+        <form action="/portfolio" method="POST">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp">
+            <div id="nameHelp" class="form-text">The name of the gun for sale.</div>
+          </div>
+          <div class="mb-3">
+            <label for="photo" class="form-label">Photo</label>
+            <input type="text" class="form-control" id="photo" name="photo">
+          </div>
+          <div class="mb-3">
+            <select class="form-select" id="type" name="type" aria-label="Default select example">
+              <option selected value="auto">Auto</option>
+              <option value="semi">Semi</option>
+              <option value="manual">Manual</option>
+            </select>
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">$</span>
+            <input type="text" id="price" name="price" class="form-control" aria-label="Amount (to the nearest dollar)">
+            <span class="input-group-text">.00</span>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <div class="section-title">
+          <h2>Gun List</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+            consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
+            in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+          <!-- If you want a new filter, simply add them here in the same format: data-filter = ".filter-YOUR_FILTER_HERE" 
+          And then give the div class of the object that has that desired tag the following class: "filter-YOUR_FILTER_HERE"
+          You can use multiple tags in the same product for filtering as well, following the same logic and adding the other class with the extra filter name-->
+
+          <li data-filter="*" class="filter-active">All</li>
+          <li data-filter=".filter-auto">Auto</li>
+          <li data-filter=".filter-semi">Semiauto</li>
+          <li data-filter=".filter-manual">Manual</li>
+        </ul>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200" id="gunList">
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+
+        <section id="portfolio-details" class="portfolio-details">
+          <div class="container">
+
+            <div class="row gy-4">
+
+              <div class="col-lg-8">
+                <div class="portfolio-details-slider swiper-container">
+                  <div class="swiper-wrapper align-items-center">
+
+                    <div class="swiper-slide">
+                      <img src="" alt="" id="gunImage1">
+                    </div>
+
+                    <div class="swiper-slide">
+                      <img src="" alt="" id="gunImage2">
+                    </div>
+
+                  </div>
+                  <div class="swiper-pagination"></div>
+                </div>
+              </div>
+
+              <div class="col-lg-4">
+                <div class="portfolio-info">
+                  <h6 id="gunId">-1</h6>
+                  <h3 id="gunName">Gun Name</h3>
+                  <div class="col-lg-12 pb-3 text-center">
+                    <button class="btn btn-primary" onclick="addCart()">Add to cart</button>
+                  </div>
+                  <ul id="gunInfo">
+                    <li><strong>Weapon's mass</strong>: 10.5 kg (23.15 lb) </li>
+                    <li><strong>Length</strong>: 1,105 mm (43.5 in) </li>
+                    <li><strong>Barrel length</strong>: 560 mm (22.0 in) </li>
+                    <li><strong>Cartridge</strong>: 7.62×51mm NATO </li>
+                    <li><strong>Caliber</strong>: 7.62 mm (0.308 in) </li>
+                    <li><strong>Action</strong>: Gas-operated, short-stroke gas piston, open bolt </li>
+                    <li><strong>Rate of fire</strong>: 550–650 RPM </li>
+                    <li><strong>Muzzle velocity</strong>: 2,800 ft/s (853 m/s) </li>
+                    <li><strong>Effective firing range</strong>: 1,200 yd (1,100 m) </li>
+                    <li><strong>Maximum firing range</strong>: 1,100 m </li>
+                    <li><strong>Feed system</strong>: Disintegrating belt with M13 Links </li>
+                    <li><strong>Sights</strong>: Iron sights </li>
+                    <li><strong>Manufacturer</strong>: Saco Defense, U.S. Ordnance </li>
+                    <li><strong>Buy directly</strong>: <a href="https://www.google.com">www.google.com</a></li>
+                    <hr>
+                  </ul>
+                  <div class="col-lg-12 text-center">
+                    <audio controls>
+                      <source src="/audio/M_60_Machine_Gun_Sound_effect.mp3" type="audio/mpeg" id="gunSound">
+                    </audio>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+
+    </div><!-- End Modal Div -->
+
+    <!-- The Shopping Cart Modal -->
+    <div id="myCart" class="modal">
+
+      <!-- Shopping Cart content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col" class="border-0 bg-light">
+                  <div class="p-2 px-3 text-uppercase">Product</div>
+                </th>
+                <th scope="col" class="border-0 bg-light">
+                  <div class="py-2 text-uppercase">Price</div>
+                </th>
+                <th scope="col" class="border-0 bg-light">
+                  <div class="py-2 text-uppercase">Quantity</div>
+                </th>
+                <th scope="col" class="border-0 bg-light">
+                  <div class="py-2 text-uppercase">Remove</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody id="cartList">
+            </tbody>
+          </table>
+        </div>
+
+      </div><!-- End Shopping Cart Modal Div -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="container footer-bottom clearfix">
+      <div class="credits">
+        Made with <a href="https://getbootstrap.com/">Bootstrap</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="/vendor/aos/aos.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/vendor/waypoints/noframework.waypoints.js"></script>
+
+  <!-- Template JS Files -->
+  <script src="/js/main.js"></script>
+  <script src="/js/modal.js"></script>
+  <script src="/js/cart.js"></script>
+
+</body>
+
+</html>
