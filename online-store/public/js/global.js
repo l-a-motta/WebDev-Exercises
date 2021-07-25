@@ -42,7 +42,7 @@ function populateTable() {
       tableContent += '<td>' + this.name + '</td>';
       tableContent += '<td>' + this.number + '</td>';
       tableContent += '<td>' + this.price + '</td>';
-      tableContent += '<td><button class="btn btn-primary" id="' + this.number + '" onclick="showModal(this.id)">Details</button></td>';
+      tableContent += '<td><button class="btn btn-primary" id="' + this._id + '" onclick="showModal(this.id)">Details</button></td>';
       tableContent += '<td><a href="#form"><button class="btn btn-warning btnGetGun" rel="' + this._id + '">Update</button></a><button class="btn btn-danger btnDeleteGun" rel="' + this._id + '">Delete</button></td>';
       tableContent += '</tr>';
     });
