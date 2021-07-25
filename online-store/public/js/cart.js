@@ -30,19 +30,20 @@ function addCart() {
 
     console.log(thisGunObject);// Will do cart things later with this
 
-    cartContent = '<tr id="gun-' + thisGunObject._id + '">' +
-    '<th scope = "row" class= "border-0" >' +
-    '<div class="p-2">' +
-    '<img src="/img/portfolio/portfolio-' + thisGunObject.number + '.jpg" alt="" class="img-fluid" width="100px" style="padding-right:15px;">' +
-    '<div class="ml-3 d-inline-block align-middle">' +
-    '<h5 class="mb-0"> <a class="text-dark d-inline-block align-middle">' + thisGunObject.name + '</a> </h5>' +
-    '<span class="text-muted font-weight-normal font-italic d-block">' + thisGunObject.type + '</span>' +
-    '</div>' +
-    '</div>' +
-    '</th>' +
-    '<td class="border-0 align-middle"><strong>$' + thisGunObject.price + '.00</strong></td>' +
-    '<td class="border-0 align-middle"><strong>1</strong></td>' +
-    '<td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>' +
+    cartContent = '<tr">' +
+        '<th scope = "row" class= "border-0" >' +
+        '<div class="p-2">' +
+            '<img src="/img/portfolio/portfolio-' + thisGunObject.number + '.jpg" alt="" class="img-fluid" width="100px" style="padding-right:15px;">' +
+            '<div class="ml-3 d-inline-block align-middle">' +
+                '<h5 class="mb-0"> <a class="text-dark d-inline-block align-middle">' + thisGunObject.name + '</a> </h5>' +
+                '<span class="text-muted font-weight-normal font-italic d-block">' + thisGunObject.type + '</span>' +
+            '</div>' +
+        '</div>' +
+        '</th>' +
+        '<td class="border-0 align-middle"><strong>' + thisGunObject.description + '</strong></td>' +
+        '<td class="border-0 align-middle"><strong>$' + thisGunObject.price + '.00</strong></td>' +
+        '<td class="border-0 align-middle"><strong>1</strong></td>' +
+        '<td class="border-0 align-middle"><a href="#" class="text-dark" rel="'+ thisGunObject._id +'" ><i class="fa fa-trash"></i></a></td>' +
     '</tr>'
 
     // Inject the whole content string into our existing HTML table
