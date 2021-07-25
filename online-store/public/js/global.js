@@ -19,6 +19,9 @@ $(document).ready(function () {
   // Delete gun button click
   $('#gunList table tbody').on('click', 'td button.btnDeleteGun', deleteGun);
 
+  // Add the function of removing to all the buttons
+  $('#cartList table tbody').on('click', 'td a.btnDeleteGunCart', deleteGunCart);
+
 });
 
 // Functions =============================================================
@@ -43,8 +46,8 @@ function populateTable() {
       tableContent += '<td>' + this.number + '</td>';
       tableContent += '<td>' + this.qtd + '</td>';
       tableContent += '<td>' + this.price + '</td>';
-      tableContent += '<td><button class="btn btn-primary" id="' + this._id + '" onclick="showModal(this.id)">Details</button></td>';
-      tableContent += '<td><a href="#form"><button class="btn btn-warning btnGetGun" rel="' + this._id + '">Update</button></a><button class="btn btn-danger btnDeleteGun" rel="' + this._id + '">Delete</button></td>';
+      tableContent += '<td><button class="btn btn-primary" id="' + this._id + '" onclick="showModal(this.id)"><i class="fa fa-plus"></i></button></td>';
+      tableContent += '<td><a href="#form"><button class="btn btn-warning btnGetGun" rel="' + this._id + '"><i class="fa fa-cog"></i></button></a><button class="btn btn-danger btnDeleteGun" rel="' + this._id + '" style="margin-left:5px;"><i class="fa fa-trash"></i></button></td>';
       tableContent += '</tr>';
     });
 
