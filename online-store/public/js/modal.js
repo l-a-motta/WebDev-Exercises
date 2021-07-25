@@ -23,6 +23,7 @@ function showModal(gun_id) {
   document.getElementById("gunType").innerHTML = thisGunObject.type;
   document.getElementById("gunPrice").innerHTML = thisGunObject.price;
   document.getElementById("gunDescription").innerHTML = thisGunObject.description;
+  document.getElementById("gunBuyDirect").href = 'https://www.google.com/search?q=buy+'+thisGunObject.name;
 
   modal.style.display = "block";
 }
