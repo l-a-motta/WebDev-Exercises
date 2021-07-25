@@ -1,7 +1,7 @@
 <h1>Add a new gun</h1>
 <!-- <form id="formAddGun" name="addgun" method="post" action="/addgun"> -->
     <fieldset>
-        <input type="hidden" id="_id" name="_id" value="">
+        <input type="hidden" id="_id" name="_id" value="-1">
         <div class="mb-3">
             <label for="inputName" class="form-label">Name</label>
             <input type="text" class="form-control" id="inputName" name="inputName" aria-describedby="nameHelp">
@@ -12,7 +12,7 @@
             <input type="number" class="form-control" id="inputNumber" name="inputNumber">
         </div>
         <div class="mb-3">
-            <label for="inputType" class="form-label">Number</label>
+            <label for="inputType" class="form-label">Type</label>
             <input type="text" class="form-control" id="inputType" name="inputType">
             <!-- <select class="form-select" id="inputType" name="inputType" aria-label="Default select example">
                 <option value="auto">Auto</option>
@@ -25,6 +25,12 @@
             <input type="number" id="inputPrice" name="inputPrice" class="form-control"
                 aria-label="Amount (to the nearest dollar)">
             <span class="input-group-text">.00</span>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Quantity</span>
+            <input type="number" id="inputQtd" name="inputQtd" class="form-control"
+                aria-label="Amount">
+            <span class="input-group-text">units</span>
         </div>
         <div class="mb-3">
             <label for="inputDescription" class="form-label">Description</label>
