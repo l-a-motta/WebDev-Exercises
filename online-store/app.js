@@ -11,6 +11,7 @@ var db = monk('localhost:27017/online-store');
 
 var indexRouter = require('./routes/index');
 var gunsRouter = require('./routes/guns');
+var cartRouter = require('./routes/cart');
 var usersRouter = require('./routes/users');
 
 var app = express();
@@ -34,6 +35,7 @@ app.use(function (req, res, next) {
 // Use of our router
 app.use('/', indexRouter);
 app.use('/guns', gunsRouter);
+app.use('/cart', cartRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

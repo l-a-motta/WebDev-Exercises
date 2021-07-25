@@ -41,6 +41,7 @@ function populateTable() {
       tableContent += '<td><img src="/img/portfolio/portfolio-' + this.number + '.jpg" class="img-fluid" alt="' + this.name + '" width="150px"></td>';
       tableContent += '<td>' + this.name + '</td>';
       tableContent += '<td>' + this.number + '</td>';
+      tableContent += '<td>' + this.qtd + '</td>';
       tableContent += '<td>' + this.price + '</td>';
       tableContent += '<td><button class="btn btn-primary" id="' + this._id + '" onclick="showModal(this.id)">Details</button></td>';
       tableContent += '<td><a href="#form"><button class="btn btn-warning btnGetGun" rel="' + this._id + '">Update</button></a><button class="btn btn-danger btnDeleteGun" rel="' + this._id + '">Delete</button></td>';
@@ -56,6 +57,9 @@ function populateTable() {
 function addGun(event) {
   event.preventDefault();
 
+  // ESPECIALLY clear the hidden ID
+  document.getElementById("_id").value = '-1';
+
   // Super basic validation - increase errorCount variable if any fields are blank
   var errorCount = 0;
   $('#addGun input').each(function (index, val) {
@@ -70,11 +74,12 @@ function addGun(event) {
       'name': $('#addGun fieldset input#inputName').val(),
       'number': $('#addGun fieldset input#inputNumber').val(),
       'type': $('#addGun fieldset input#inputType').val(),
+      'qtd': $('#addGun fieldset input#inputQtd').val(),
       'price': $('#addGun fieldset input#inputPrice').val(),
       'description': $('#addGun fieldset input#inputDescription').val()
     }
 
-    console.log(newGun);
+    //console.log(newGun);
 
     // Use AJAX to post the object to our addGun service
     $.ajax({
@@ -163,6 +168,7 @@ function getGun(event) {
   document.getElementById("inputNumber").value = thisGunObject.number;
   document.getElementById("inputName").value = thisGunObject.name;
   document.getElementById("inputType").value = thisGunObject.type;
+  document.getElementById("inputQtd").value = thisGunObject.qtd;
   document.getElementById("inputPrice").value = thisGunObject.price;
   document.getElementById("inputDescription").value = thisGunObject.description;
   document.getElementById("_id").value = $(this).attr('rel');
@@ -186,6 +192,7 @@ function updateGun(event) {
       'name': $('#addGun fieldset input#inputName').val(),
       'number': $('#addGun fieldset input#inputNumber').val(),
       'type': $('#addGun fieldset input#inputType').val(),
+      'qtd': $('#addGun fieldset input#inputQtd').val(),
       'price': $('#addGun fieldset input#inputPrice').val(),
       'description': $('#addGun fieldset input#inputDescription').val()
     }
@@ -222,10 +229,11 @@ function updateGun(event) {
 
     //   }
     // });
-    // ESPECIALLY clear the hidden ID
-    document.getElementById("_id").value = '';
     // Clear the form inputs
     $('#addGun fieldset input').val('');
+
+    // ESPECIALLY clear the hidden ID
+    document.getElementById("_id").value = '-1';
 
     // Update the table
     populateTable();
