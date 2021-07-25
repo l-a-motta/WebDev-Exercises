@@ -52,9 +52,9 @@ function populateCart() {
         // Inject the whole content string into our existing HTML table
         $('#cartList table tbody').html(cartTableContent);
 
-        // Add the function of removing to all the buttons
-        $('#cartList table tbody').on('click', 'td a.btnDeleteGunCart', deleteGunCart);
     });
+    // Add the function of removing to all the buttons
+    $('#cartList table tbody').on('click', 'td a.btnDeleteGunCart', deleteGunCart);
 };
 
 // Add gun
