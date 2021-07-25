@@ -45,7 +45,7 @@ function populateCart() {
                     '<td class="border-0 align-middle"><strong>' + this.description + '</strong></td>' +
                     '<td class="border-0 align-middle"><strong>$' + this.price + '.00</strong></td>' +
                     '<td class="border-0 align-middle"><strong>1</strong></td>' +
-                    '<td class="border-0 align-middle"><a href="#" class="text-dark btnDeleteGunCart" rel="'+ this._id +'" ><i class="fa fa-trash"></i></a></td>' +
+                    '<td class="border-0 align-middle"><a href="#" class="text-danger btnDeleteGunCart" rel="'+ this._id +'" ><i class="fa fa-trash"></i></a></td>' +
                 '</tr>'
         });
 
