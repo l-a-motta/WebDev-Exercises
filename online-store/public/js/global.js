@@ -10,7 +10,13 @@ $(document).ready(function () {
   // Add gun button click
   $('#btnAddGun').on('click', addGun);
 
-  // Delete gun link click
+  // Get gun button click
+  $('#gunList table tbody').on('click', 'td button.btnGetGun', getGun);
+
+  // Update gun button click
+  $('#btnUpdateGun').on('click', updateGun);
+
+  // Delete gun button click
   $('#gunList table tbody').on('click', 'td button.btnDeleteGun', deleteGun);
 
 });
@@ -37,7 +43,7 @@ function populateTable() {
       tableContent += '<td>' + this.number + '</td>';
       tableContent += '<td>' + this.price + '</td>';
       tableContent += '<td><button class="btn btn-primary" id="' + this.number + '" onclick="showModal(this.id)">Details</button></td>';
-      tableContent += '<td><button class="btn btn-warning">Update</button><button class="btn btn-danger btnDeleteGun" rel="' + this._id + '">Delete</button></td>';
+      tableContent += '<td><button class="btn btn-warning btnGetGun" rel="' + this._id + '">Update</button><button class="btn btn-danger btnDeleteGun" rel="' + this._id + '">Delete</button></td>';
       tableContent += '</tr>';
     });
 
@@ -140,4 +146,93 @@ function deleteGun(event) {
 
   }
 
+};
+
+// Get gun and put it in the form
+function getGun(event) {
+  // Retrieve username from link rel attribute
+  var thisGunId = $(this).attr('rel');
+
+  // Get Index of object based on id value
+  var arrayPosition = gunListData.map(function(arrayItem) { return arrayItem._id; }).indexOf(thisGunId);
+
+  // Get our User Object
+  var thisGunObject = gunListData[arrayPosition];
+
+  // Need to change each gunImage1 (just change src), gunImage2 (just change src), gunInfo (change whole HTML), soundInfo (just change src)...
+  document.getElementById("inputNumber").value = thisGunObject.number;
+  document.getElementById("inputName").value = thisGunObject.name;
+  document.getElementById("inputType").value = thisGunObject.type;
+  document.getElementById("inputPrice").value = thisGunObject.price;
+  document.getElementById("inputDescription").value = thisGunObject.description;
+  document.getElementById("_id").value = $(this).attr('rel');
+}
+
+// Update gun
+function updateGun(event) {
+
+  // Super basic validation - increase errorCount variable if any fields are blank
+  var errorCount = 0;
+  $('#addGun input').each(function (index, val) {
+    if ($(this).val() === '') { errorCount++; }
+  });
+
+  // Check and make sure errorCount's still at zero
+  if (errorCount === 0) {
+
+    // If it is, compile all gun info into one object
+    var updatedGun = {
+      '_id': $('#addGun fieldset input#_id').val(),
+      'name': $('#addGun fieldset input#inputName').val(),
+      'number': $('#addGun fieldset input#inputNumber').val(),
+      'type': $('#addGun fieldset input#inputType').val(),
+      'price': $('#addGun fieldset input#inputPrice').val(),
+      'description': $('#addGun fieldset input#inputDescription').val()
+    }
+    
+    console.log(updatedGun);
+
+    // Use AJAX to post the object to our addGun service
+    $.ajax({
+      type: 'PUT',
+      data: updatedGun,
+      url: '/guns/changegun/' + updatedGun._id,
+      dataType: 'JSON',
+      // Todo FOR SOME REASON, THE .DONE IS NOT WORKING
+    })//.done(function (response) {
+    //   console.log("AJAX done function response starts here...")
+    //   // Check for successful (blank) response
+    //   if (response.msg === '') {
+    //     console.log("It should be clearing now...")
+        
+    //     // ESPECIALLY clear the hidden ID
+    //     document.getElementById("_id").value = '';
+    //     // Clear the form inputs
+    //     $('#addGun fieldset input').val('');
+        
+
+    //     // Update the table
+    //     populateTable();
+
+    //   }
+    //   else {
+
+    //     // If something goes wrong, alert the error message that our service returned
+    //     alert('Error: ' + response.msg);
+
+    //   }
+    // });
+    // ESPECIALLY clear the hidden ID
+    document.getElementById("_id").value = '';
+    // Clear the form inputs
+    $('#addGun fieldset input').val('');
+
+    // Update the table
+    populateTable();
+  }
+  else {
+    // If errorCount is more than 0, error out
+    alert('Please fill in all fields');
+    return false;
+  }
 };
