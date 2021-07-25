@@ -19,7 +19,7 @@ var data = JSON.parse(json);
 
 function addCart() {
     document.getElementById("myModal").style.display = "none";
-    var gun_id = document.getElementById("gunId").innerHTML;
+    var gun_id = document.getElementById("gunNumber").innerHTML;
     jQuery.each(data.guns, function (key, val) {
 
         // console.log('val.id: '+val.id);

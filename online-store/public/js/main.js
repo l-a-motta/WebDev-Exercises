@@ -6,7 +6,7 @@ var data = JSON.parse(json);
 jQuery.each(data.guns, function (key, val) {
 
   // Momentary comment to test other way of showing guns
-  // $("#gunList").append('<div class="col-lg-4 col-md-6 portfolio-item filter-' + val.type + '">' +
+  // $("#gunShow").append('<div class="col-lg-4 col-md-6 portfolio-item filter-' + val.type + '">' +
   //   '<div class="portfolio-img"><img src="/img/portfolio/portfolio-' + val.number + '.jpg" class="img-fluid" alt=""></div>' +
   //   '<div class="portfolio-info">' +
   //   '<h4>' + val.name + '</h4>' +

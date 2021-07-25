@@ -7,16 +7,22 @@ var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal with the correct information by checking id of the photo clicked
 function showModal(gun_id) {
-  var data = JSON.parse(json);
+  // var data = JSON.parse(json);
+
+  // Get Index of object based on id value
+  var arrayPosition = gunListData.map(function(arrayItem) { return arrayItem.number; }).indexOf(gun_id);
+
+  // Get our User Object
+  var thisGunObject = gunListData[arrayPosition];
 
   // Need to change each gunImage1 (just change src), gunImage2 (just change src), gunInfo (change whole HTML), soundInfo (just change src)...
-  document.getElementById("gunImage1").src = '/img/portfolio/'+data.guns[gun_id].photo+'.jpg';
-  document.getElementById("gunImage2").src = '/img/portfolio/'+data.guns[gun_id].photo+'.jpg';
-  document.getElementById("gunNumber").innerHTML = data.guns[gun_id].number;
-  document.getElementById("gunName").innerHTML = data.guns[gun_id].name;
-  document.getElementById("gunType").innerHTML = data.guns[gun_id].type;
-  document.getElementById("gunPrice").innerHTML = data.guns[gun_id].price;
-  document.getElementById("gunDescription").innerHTML = data.guns[gun_id].description;
+  document.getElementById("gunImage1").src = '/img/portfolio/portfolio-'+thisGunObject.number+'.jpg';
+  document.getElementById("gunImage2").src = '/img/portfolio/portfolio-'+thisGunObject.number+'.jpg';
+  document.getElementById("gunNumber").innerHTML = thisGunObject.number;
+  document.getElementById("gunName").innerHTML = thisGunObject.name;
+  document.getElementById("gunType").innerHTML = thisGunObject.type;
+  document.getElementById("gunPrice").innerHTML = thisGunObject.price;
+  document.getElementById("gunDescription").innerHTML = thisGunObject.description;
 
   modal.style.display = "block";
 }

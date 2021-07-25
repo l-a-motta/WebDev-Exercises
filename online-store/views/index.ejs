@@ -5,10 +5,8 @@
     <section id="portfolio" class="portfolio">
       <div class="container" data-aos="fade-up">
 
-        <%- include('include/form.ejs') %>
-
           <div class="section-title">
-            <h2>Gun List</h2>
+            <h2>What Guns Do We Have?</h2>
             <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
               consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat
               sit
@@ -30,7 +28,7 @@
             <li data-filter=".filter-manual">Manual</li>
           </ul>
 
-          <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200" id="gunList" name="gunList">
+          <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200" id="gunShow" name="gunShow">
             <%
               var list = '';
               for (i = 0; i < gunlist.length; i++) 
@@ -41,7 +39,7 @@
                   '<h4>' + gunlist[i].name + '</h4>' +
                   '<p>' + gunlist[i].type + '</p>' +
                   '<a href="/img/portfolio/portfolio-' + gunlist[i].number + '.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="' + gunlist[i].name + '"><i class="bx bx-plus"></i></a>' +
-                  '<a class="details-link" title="More Details" id="' + gunlist[i].number + '" onclick="showModal(this.id)"><i class="bx bx-link"></i></a>' +
+                  '<a class="details-link" title="More Details" id="show' + gunlist[i].number + '" onclick="showModal(this.id)"><i class="bx bx-link"></i></a>' +
                   '</div>' +
                   '</div>';
               }
@@ -51,6 +49,39 @@
 
       </div>
     </section><!-- End Portfolio Section -->
+
+    <section id="list" class="list">
+      <div class="container" data-aos="fade-up" id="gunList" name="gunList">
+        <div class="section-title">
+          <h2>Guns For Sale</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+            consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat
+            sit
+            in iste officiis commodi quidem hic quas. Magnam dolores commodi suscipit. Necessitatibus eius consequatur
+            ex aliquid fuga eum quidem. Sit sint
+            consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat
+            sit
+            in iste officiis commodi quidem hic quas.</p>
+        </div>
+        <table class="table table-striped">
+          <thead class="table-dark">
+            <tr>
+              <th>Photo</th>
+              <th>Name</th>
+              <th>Number</th>
+              <th>Price</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="container">
+      <%- include('include/form.ejs') %>
+    </div>
 
     <!-- The Modal -->
     <div id="myModal" class="modal">
