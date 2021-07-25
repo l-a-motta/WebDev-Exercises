@@ -12,11 +12,11 @@ function showModal(gun_id) {
   // Need to change each gunImage1 (just change src), gunImage2 (just change src), gunInfo (change whole HTML), soundInfo (just change src)...
   document.getElementById("gunImage1").src = '/img/portfolio/'+data.guns[gun_id].photo+'.jpg';
   document.getElementById("gunImage2").src = '/img/portfolio/'+data.guns[gun_id].photo+'.jpg';
-  document.getElementById("gunNumber").innerHTML = data.guns[gun_id].id;
+  document.getElementById("gunNumber").innerHTML = data.guns[gun_id].number;
   document.getElementById("gunName").innerHTML = data.guns[gun_id].name;
-  document.getElementById("gunType").innerHTML = data.guns[gun_id].id;
-  document.getElementById("gunPrice").innerHTML = data.guns[gun_id].id;
-  document.getElementById("gunDescription").innerHTML = data.guns[gun_id].id;
+  document.getElementById("gunType").innerHTML = data.guns[gun_id].type;
+  document.getElementById("gunPrice").innerHTML = data.guns[gun_id].price;
+  document.getElementById("gunDescription").innerHTML = data.guns[gun_id].description;
 
   modal.style.display = "block";
 }
