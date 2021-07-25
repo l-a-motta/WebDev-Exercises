@@ -1,0 +1,38 @@
+<h1>Add a new gun</h1>
+<!-- <form id="formAddGun" name="addgun" method="post" action="/addgun"> -->
+    <fieldset>
+        <input type="hidden" id="_id" name="_id" value="">
+        <div class="mb-3">
+            <label for="inputName" class="form-label">Name</label>
+            <input type="text" class="form-control" id="inputName" name="inputName" aria-describedby="nameHelp">
+            <div id="nameHelp" class="form-text">The name of the gun for sale.</div>
+        </div>
+        <div class="mb-3">
+            <label for="inputNumber" class="form-label">Number</label>
+            <input type="number" class="form-control" id="inputNumber" name="inputNumber">
+        </div>
+        <div class="mb-3">
+            <label for="inputType" class="form-label">Number</label>
+            <input type="text" class="form-control" id="inputType" name="inputType">
+            <!-- <select class="form-select" id="inputType" name="inputType" aria-label="Default select example">
+                <option value="auto">Auto</option>
+                <option value="semi">Semi</option>
+                <option value="manual">Manual</option>
+            </select> -->
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text">$</span>
+            <input type="number" id="inputPrice" name="inputPrice" class="form-control"
+                aria-label="Amount (to the nearest dollar)">
+            <span class="input-group-text">.00</span>
+        </div>
+        <div class="mb-3">
+            <label for="inputDescription" class="form-label">Description</label>
+            <input type="text" class="form-control" id="inputDescription" name="inputDescription">
+        </div>
+        <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+        <button class="btn btn-primary" id="btnAddGun">Submit</button>
+        <button class="btn btn-warning" id="btnUpdateGun">Update</button>
+        <br><br>
+    </fieldset>
+<!-- </form> -->

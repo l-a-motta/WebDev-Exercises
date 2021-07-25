@@ -1,0 +1,93 @@
+<%- include('include/header.ejs') %>
+  <%- include('include/cta.ejs') %>
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container" data-aos="fade-up">
+
+          <div class="section-title">
+            <h2>What Guns Do We Have?</h2>
+            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+              consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat
+              sit
+              in iste officiis commodi quidem hic quas. Magnam dolores commodi suscipit. Necessitatibus eius consequatur
+              ex aliquid fuga eum quidem. Sit sint
+              consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat
+              sit
+              in iste officiis commodi quidem hic quas.</p>
+          </div>
+
+          <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+            <!-- If you want a new filter, simply add them here in the same format: data-filter = ".filter-YOUR_FILTER_HERE" 
+        And then give the div class of the object that has that desired tag the following class: "filter-YOUR_FILTER_HERE"
+        You can use multiple tags in the same product for filtering as well, following the same logic and adding the other class with the extra filter name-->
+
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-auto">Auto</li>
+            <li data-filter=".filter-semi">Semiauto</li>
+            <li data-filter=".filter-manual">Manual</li>
+          </ul>
+
+          <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200" id="gunShow" name="gunShow">
+            <%
+              var list = '';
+              for (i = 0; i < gunlist.length; i++) 
+              {
+                list += '<div class="col-lg-4 col-md-6 portfolio-item filter-' + gunlist[i].type + '">' +
+                  '<div class="portfolio-img"><img src="/img/portfolio/portfolio-' + gunlist[i].number + '.jpg" class="img-fluid" alt=""></div>' +
+                  '<div class="portfolio-info">' +
+                  '<h4>' + gunlist[i].name + '</h4>' +
+                  '<p>' + gunlist[i].type + '</p>' +
+                  '<a href="/img/portfolio/portfolio-' + gunlist[i].number + '.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="' + gunlist[i].name + '"><i class="bx bx-plus"></i></a>' +
+                  '<a href="https://www.google.com/search?q='+ gunlist[i].name +'" class="details-link" title="More Details" id="show' + gunlist[i].number + '"><i class="bx bx-link"></i></a>' +
+                  '</div>' +
+                  '</div>';
+              }
+            %>
+            <%- list %>
+          </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+
+    <section id="list" class="list">
+      <div class="container" data-aos="fade-up" id="gunList" name="gunList">
+        <div class="section-title">
+          <h2>Guns For Sale</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+            consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat
+            sit
+            in iste officiis commodi quidem hic quas. Magnam dolores commodi suscipit. Necessitatibus eius consequatur
+            ex aliquid fuga eum quidem. Sit sint
+            consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat
+            sit
+            in iste officiis commodi quidem hic quas.</p>
+        </div>
+        <table class="table table-striped">
+          <thead class="table-dark">
+            <tr>
+              <th>Photo</th>
+              <th>Name</th>
+              <th>Number</th>
+              <th>Price</th>
+              <th>Options</th>
+              <th>ADMIN</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="form" class="form">
+      <div class="container" id="addGun">
+        <%- include('include/form.ejs') %>
+      </div>
+    </section>
+
+    <%- include('include/modal.ejs') %>
+
+    <%- include('include/cart.ejs') %>    
+
+    <%- include('include/footer.ejs') %>
