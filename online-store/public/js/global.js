@@ -7,8 +7,11 @@ $(document).ready(function () {
   // Populate the gun table on initial page load
   populateTable();
 
-  // Add User button click
+  // Add gun button click
   $('#btnAddGun').on('click', addGun);
+
+  // Delete gun link click
+  $('#gunList table tbody').on('click', 'td button.btnDeleteGun', deleteGun);
 
 });
 
@@ -23,7 +26,7 @@ function populateTable() {
   // jQuery AJAX call for JSON
   $.getJSON('/guns/gunlist', function (data) {
 
-    // Stick our user data array into a userlist variable in the global object
+    // Stick our gun data array into a gunlist variable in the global object
     gunListData = data;
 
     // For each item in our JSON, add a table row and cells to the content string
@@ -34,7 +37,7 @@ function populateTable() {
       tableContent += '<td>' + this.number + '</td>';
       tableContent += '<td>' + this.price + '</td>';
       tableContent += '<td><button class="btn btn-primary" id="' + this.number + '" onclick="showModal(this.id)">Details</button></td>';
-      tableContent += '<td><button class="btn btn-warning">Update</button><button class="btn btn-danger">Delete</button></td>';
+      tableContent += '<td><button class="btn btn-warning">Update</button><button class="btn btn-danger btnDeleteGun" rel="' + this._id + '">Delete</button></td>';
       tableContent += '</tr>';
     });
 
@@ -43,7 +46,7 @@ function populateTable() {
   });
 };
 
-// Add User
+// Add gun
 function addGun(event) {
   event.preventDefault();
 
@@ -56,7 +59,7 @@ function addGun(event) {
   // Check and make sure errorCount's still at zero
   if (errorCount === 0) {
 
-    // If it is, compile all user info into one object
+    // If it is, compile all gun info into one object
     var newGun = {
       'name': $('#addGun fieldset input#inputName').val(),
       'number': $('#addGun fieldset input#inputNumber').val(),
@@ -98,4 +101,43 @@ function addGun(event) {
     alert('Please fill in all fields');
     return false;
   }
+};
+
+// Delete gun
+function deleteGun(event) {
+
+  event.preventDefault();
+
+  // Pop up a confirmation dialog
+  var confirmation = confirm('Are you sure you want to delete this gun?');
+
+  // Check and make sure the gun confirmed
+  if (confirmation === true) {
+
+    // If they did, do our delete
+    $.ajax({
+      type: 'DELETE',
+      url: '/guns/deletegun/' + $(this).attr('rel')
+    }).done(function( response ) {
+
+      // Check for a successful (blank) response
+      if (response.msg === '') {
+      }
+      else {
+        alert('Error: ' + response.msg);
+      }
+
+      // Update the table
+      populateTable();
+
+    });
+
+  }
+  else {
+
+    // If they said no to the confirm, do nothing
+    return false;
+
+  }
+
 };
