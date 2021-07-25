@@ -53,8 +53,6 @@ function populateCart() {
         $('#cartList table tbody').html(cartTableContent);
 
     });
-    // Add the function of removing to all the buttons
-    $('#cartList table tbody').on('click', 'td a.btnDeleteGunCart', deleteGunCart);
 };
 
 // Add gun
@@ -113,7 +111,8 @@ function addCart() {
 };
 
 // Delete gun
-function deleteGunCart() {
+function deleteGunCart(event) {
+    event.preventDefault();
 
     // Pop up a confirmation dialog
     var confirmation = confirm('Are you sure you want to remove this gun from the cart?');

@@ -19,6 +19,9 @@ $(document).ready(function () {
   // Delete gun button click
   $('#gunList table tbody').on('click', 'td button.btnDeleteGun', deleteGun);
 
+  // Add the function of removing to all the buttons
+  $('#cartList table tbody').on('click', 'td a.btnDeleteGunCart', deleteGunCart);
+
 });
 
 // Functions =============================================================
