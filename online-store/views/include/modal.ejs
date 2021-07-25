@@ -1,0 +1,60 @@
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+
+        <section id="portfolio-details" class="portfolio-details">
+            <div class="container">
+
+                <div class="row gy-4">
+
+                    <div class="col-lg-8">
+                        <div class="portfolio-details-slider swiper-container">
+                            <div class="swiper-wrapper align-items-center">
+
+                                <div class="swiper-slide">
+                                    <img src="" alt="" id="gunImage1">
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <img src="" alt="" id="gunImage2">
+                                </div>
+
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="portfolio-info">
+                            <h6 id="gunNumber">-1</h6>
+                            <h3 id="gunName">Gun Name</h3>
+                            <div class="col-lg-12 pb-3 text-center">
+                                <button class="btn btn-primary" onclick="addCart()">Add to cart</button>
+                            </div>
+                            <ul id="gunInfo">
+                                <li><strong>Type</strong>: <span id="gunType">Type</span> </li>
+                                <li><strong>Price</strong>: <span id="gunPrice">Price</span> </li>
+                                <li><strong>Description</strong>: <span id="gunDescription">Description</span> </li>
+                                <li><a href="https://www.google.com/?"><strong>Buy directly</strong></a></li>
+                                <hr>
+                            </ul>
+                            <div class="col-lg-12 text-center">
+                                <audio controls>
+                                    <source src="/audio/M_60_Machine_Gun_Sound_effect.mp3" type="audio/mpeg"
+                                        id="gunSound">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+</div><!-- End Modal Div -->
