@@ -30,7 +30,7 @@ function populateTable() {
       tableContent += '<td>' + this.name + '</td>';
       tableContent += '<td>' + this.number + '</td>';
       tableContent += '<td>' + this.price + '</td>';
-      tableContent += '<td><button class="btn btn-primary" id="'+this.number+'" onclick="showModal(this.id)">Details</button><button class="btn btn-success" onclick="addCart()">Add to cart</button></td>';
+      tableContent += '<td><button class="btn btn-primary" id="'+this.number+'" onclick="showModal(this.id)">Details</button></td>';
       tableContent += '<td><button class="btn btn-warning">Update</button><button class="btn btn-danger">Delete</button></td>';
       tableContent += '</tr>';
     });
