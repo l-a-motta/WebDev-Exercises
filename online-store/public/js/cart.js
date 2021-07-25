@@ -19,7 +19,17 @@ var data = JSON.parse(json);
 
 function addCart() {
     document.getElementById("myModal").style.display = "none";
+
     var gun_id = document.getElementById("gunNumber").innerHTML;
+
+    // Get Index of object based on id value
+    var arrayPosition = gunListData.map(function(arrayItem) { return arrayItem.number; }).indexOf(gun_id);
+
+    // Get our User Object
+    var thisGunObject = gunListData[arrayPosition];
+
+    console.log(thisGunObject);// Will do cart things later with this
+
     jQuery.each(data.guns, function (key, val) {
 
         // console.log('val.id: '+val.id);
