@@ -5,10 +5,12 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 // New Code
+var mongo = require('mongodb');
 var monk = require('monk');
 var db = monk('localhost:27017/online-store');
 
 var indexRouter = require('./routes/index');
+var gunsRouter = require('./routes/guns');
 var usersRouter = require('./routes/users');
 
 var app = express();
@@ -31,6 +33,7 @@ app.use(function (req, res, next) {
 
 // Use of our router
 app.use('/', indexRouter);
+app.use('/guns', gunsRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

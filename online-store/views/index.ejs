@@ -31,22 +31,7 @@
           </ul>
 
           <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200" id="gunList" name="gunList">
-            <%
-              var list = '';
-              for (i = 0; i < gunlist.length; i++) 
-              {
-                list += '<div class="col-lg-4 col-md-6 portfolio-item filter-' + gunlist[i].type + '">' +
-                  '<div class="portfolio-img"><img src="/img/portfolio/portfolio-' + gunlist[i].number + '.jpg" class="img-fluid" alt=""></div>' +
-                  '<div class="portfolio-info">' +
-                  '<h4>' + gunlist[i].name + '</h4>' +
-                  '<p>' + gunlist[i].type + '</p>' +
-                  '<a href="/img/portfolio/portfolio-' + gunlist[i].number + '.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="' + gunlist[i].name + '"><i class="bx bx-plus"></i></a>' +
-                  '<a class="details-link" title="More Details" id="' + gunlist[i].number + '" onclick="showModal(this.id)"><i class="bx bx-link"></i></a>' +
-                  '</div>' +
-                  '</div>';
-              }
-            %>
-            <%- list %>
+            <!-- The list will be populated by the global.js -->
           </div>
 
       </div>
@@ -83,26 +68,16 @@
 
               <div class="col-lg-4">
                 <div class="portfolio-info">
-                  <h6 id="gunId">-1</h6>
+                  <h6 id="gunNumber">-1</h6>
                   <h3 id="gunName">Gun Name</h3>
                   <div class="col-lg-12 pb-3 text-center">
                     <button class="btn btn-primary" onclick="addCart()">Add to cart</button>
                   </div>
                   <ul id="gunInfo">
-                    <li><strong>Weapon's mass</strong>: 10.5 kg (23.15 lb) </li>
-                    <li><strong>Length</strong>: 1,105 mm (43.5 in) </li>
-                    <li><strong>Barrel length</strong>: 560 mm (22.0 in) </li>
-                    <li><strong>Cartridge</strong>: 7.62×51mm NATO </li>
-                    <li><strong>Caliber</strong>: 7.62 mm (0.308 in) </li>
-                    <li><strong>Action</strong>: Gas-operated, short-stroke gas piston, open bolt </li>
-                    <li><strong>Rate of fire</strong>: 550–650 RPM </li>
-                    <li><strong>Muzzle velocity</strong>: 2,800 ft/s (853 m/s) </li>
-                    <li><strong>Effective firing range</strong>: 1,200 yd (1,100 m) </li>
-                    <li><strong>Maximum firing range</strong>: 1,100 m </li>
-                    <li><strong>Feed system</strong>: Disintegrating belt with M13 Links </li>
-                    <li><strong>Sights</strong>: Iron sights </li>
-                    <li><strong>Manufacturer</strong>: Saco Defense, U.S. Ordnance </li>
-                    <li><strong>Buy directly</strong>: <a href="https://www.google.com">www.google.com</a></li>
+                    <li><strong>Type</strong>: <span id="gunType">Type</span> </li>
+                    <li><strong>Price</strong>: <span id="gunPrice">Price</span> </li>
+                    <li><strong>Description</strong>: <span id="gunDescription">Description</span> </li>
+                    <li><a href="https://www.google.com/?"><strong>Buy directly</strong></a></li>
                     <hr>
                   </ul>
                   <div class="col-lg-12 text-center">
