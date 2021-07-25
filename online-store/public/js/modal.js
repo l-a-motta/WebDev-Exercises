@@ -26,6 +26,10 @@ function showModal(gun_id) {
   document.getElementById("gunPrice").innerHTML = thisGunObject.price;
   document.getElementById("gunDescription").innerHTML = thisGunObject.description;
   document.getElementById("gunBuyDirect").href = 'https://www.google.com/search?q=buy+'+thisGunObject.name;
+  // document.getElementById("gunSound").src = '/audio/'+thisGunObject.number+'.mp3';
+  document.getElementById("gunSound").innerHTML = '<audio controls>' +
+                                                    '<source src="/audio/'+ thisGunObject.number +'.mp3" type="audio/mpeg" id="gunSound">'+
+                                                  '</audio>';
 
   modal.style.display = "block";
 }
