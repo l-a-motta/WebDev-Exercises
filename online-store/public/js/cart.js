@@ -33,19 +33,19 @@ function populateCart() {
         // For each item in our JSON, add a table row and cells to the content string
         $.each(data, function () {
             cartTableContent += '<tr>' +
-                    '<th scope = "row" class= "border-0" >' +
-                    '<div class="p-2">' +
-                        '<img src="/img/portfolio/portfolio-' + this.number + '.jpg" alt="" class="img-fluid" width="100px" style="padding-right:15px;">' +
-                        '<div class="ml-3 d-inline-block align-middle">' +
-                            '<h5 class="mb-0"> <a class="text-dark d-inline-block align-middle">' + this.name + '</a> </h5>' +
-                            '<span class="text-muted font-weight-normal font-italic d-block">' + this.type + '</span>' +
-                        '</div>' +
-                    '</div>' +
-                    '</th>' +
-                    '<td class="border-0 align-middle"><strong>' + this.description + '</strong></td>' +
-                    '<td class="border-0 align-middle"><strong>$' + this.price + '.00</strong></td>' +
-                    '<td class="border-0 align-middle"><strong>1</strong></td>' +
-                    '<td class="border-0 align-middle"><a href="#" class="text-danger btnDeleteGunCart" rel="'+ this._id +'" ><i class="fa fa-trash"></i></a></td>' +
+                '<th scope = "row" class= "border-0" >' +
+                '<div class="p-2">' +
+                '<img src="/img/portfolio/portfolio-' + this.number + '.jpg" alt="" class="img-fluid" width="100px" style="padding-right:15px;">' +
+                '<div class="ml-3 d-inline-block align-middle">' +
+                '<h5 class="mb-0"> <a class="text-dark d-inline-block align-middle">' + this.name + '</a> </h5>' +
+                '<span class="text-muted font-weight-normal font-italic d-block">' + this.type + '</span>' +
+                '</div>' +
+                '</div>' +
+                '</th>' +
+                '<td class="border-0 align-middle"><strong>' + this.description + '</strong></td>' +
+                '<td class="border-0 align-middle"><strong>$' + this.price + '.00</strong></td>' +
+                '<td class="border-0 align-middle"><strong>1</strong></td>' +
+                '<td class="border-0 align-middle"><a href="#" class="text-danger btnDeleteGunCart" rel="' + this._id + '" ><i class="fa fa-trash"></i></a></td>' +
                 '</tr>'
         });
 
@@ -114,37 +114,48 @@ function addCart() {
 
 // Delete gun
 function deleteGunCart() {
-  
+
     // Pop up a confirmation dialog
     var confirmation = confirm('Are you sure you want to remove this gun from the cart?');
-  
+
     // Check and make sure the gun confirmed
     if (confirmation === true) {
-  
-      // If they did, do our delete
-      $.ajax({
-        type: 'DELETE',
-        url: '/cart/deletecart/' + $(this).attr('rel')
-      }).done(function( response ) {
-  
-        // Check for a successful (blank) response
-        if (response.msg === '') {
-        }
-        else {
-          alert('Error: ' + response.msg);
-        }
-  
-        // Update the table
-        populateCart();
-  
-      });
-  
+
+        // If they did, do our delete
+        $.ajax({
+            type: 'DELETE',
+            url: '/cart/deletecart/' + $(this).attr('rel')
+        }).done(function (response) {
+
+            // Check for a successful (blank) response
+            if (response.msg === '') {
+            }
+            else {
+                alert('Error: ' + response.msg);
+            }
+
+            // Update the table
+            populateCart();
+
+        });
+
     }
     else {
-  
-      // If they said no to the confirm, do nothing
-      return false;
-  
+
+        // If they said no to the confirm, do nothing
+        return false;
+
     }
-  
-  };
+
+};
+
+function checkOutCart() {
+    // for each gun in the cart table on mongodb
+        // check if that gun's quantity atribute on mongodb is more than zero. 
+            // If false, warn user that gun is out of stock and continue on with the for each
+        // subtract one from the gun's quantity atribute, on the guns table of mongodb
+        // remove that gun from the CART table on mongodb
+        // DO NOT REMOVE THE GUN ENTRY FROM THE GUN TABLE ON MONGODB, the admin can just restock by updating the gun's atributes
+        // update cart table
+        // update gun list
+}
