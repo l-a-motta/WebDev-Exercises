@@ -8,6 +8,7 @@ var span = document.getElementsByClassName("close")[1];
 function showCart() {
     populateCart();
     cart.style.display = "block";
+    modal.style.display = "none";
 }
 
 // When the user clicks on <span> (x), close the cart modal
@@ -145,13 +146,54 @@ function deleteGunCart(event) {
 
 };
 
+// Remove guns from cart and subtract from their qtd
 function checkOutCart() {
-    // for each gun in the cart table on mongodb
-        // check if that gun's quantity atribute on mongodb is more than zero. 
-            // If false, warn user that gun is out of stock and continue on with the for each
-        // subtract one from the gun's quantity atribute, on the guns table of mongodb
-        // remove that gun from the CART table on mongodb
-        // DO NOT REMOVE THE GUN ENTRY FROM THE GUN TABLE ON MONGODB, the admin can just restock by updating the gun's atributes
-        // update cart table
-        // update gun list
-}
+
+    // jQuery AJAX call for JSON
+    $.getJSON('/cart/cartlist', function (data) {
+
+        // For each item in our JSON
+        $.each(data, function () {
+            if (this.qtd <= 0) {
+                // Pop up a confirmation dialog
+                confirm('We are sorry, but the gun you tried to checkout has no more stock.');
+            }
+            else {
+                this.qtd -= 1;// Remove one from its quantity
+
+                var newQtd = {
+                    'ref_id': this.ref_id,
+                    'qtd': this.qtd
+                }
+
+                // Use AJAX to change the gun's attribute of qtd to the new one. We need to call the /guns/ routes for this
+                $.ajax({
+                    type: 'PUT',
+                    data: newQtd,
+                    url: '/guns/changegun/' + newQtd.ref_id,
+                    dataType: 'JSON',
+                })
+
+                // Once the quantity has been updated, remove it from the cart since it is 'bought'
+                $.ajax({
+                    type: 'DELETE',
+                    url: '/cart/deletecart/' + this._id
+                }).done(function (response) {
+
+                    // Check for a successful (blank) response
+                    if (response.msg === '') {
+                    }
+                    else {
+                        alert('Error: ' + response.msg);
+                    }
+
+                    // Update the table
+                    populateCart();
+
+                });
+
+                populateTable();
+            }
+        });
+    });
+};

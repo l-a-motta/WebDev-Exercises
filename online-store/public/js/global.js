@@ -199,8 +199,6 @@ function updateGun(event) {
       'price': $('#addGun fieldset input#inputPrice').val(),
       'description': $('#addGun fieldset input#inputDescription').val()
     }
-    
-    console.log(updatedGun);
 
     // Use AJAX to post the object to our addGun service
     $.ajax({
