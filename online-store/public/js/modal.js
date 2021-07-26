@@ -7,8 +7,6 @@ var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal with the correct information by checking id of the photo clicked
 function showModal(gun_id) {
-  // var data = JSON.parse(json);
-
   // Get Index of object based on id value
   var arrayPosition = gunListData.map(function(arrayItem) { return arrayItem._id; }).indexOf(gun_id);
 

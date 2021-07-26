@@ -7,7 +7,7 @@ var logger = require('morgan');
 // New Code
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/online-store');
+var db = monk('localhost:27017/online-store');// Your database path here
 
 var indexRouter = require('./routes/index');
 var gunsRouter = require('./routes/guns');

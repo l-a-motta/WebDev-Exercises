@@ -15,9 +15,6 @@ span.onclick = function () {
     cart.style.display = "none";
 }
 
-// Get JSON
-// var data = JSON.parse(json);
-
 // Fill table with data
 function populateCart() {
 
