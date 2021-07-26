@@ -21,6 +21,7 @@ function populateCart() {
 
     // Empty content string
     var cartTableContent = '';
+    var newTotalPrice = 0;
 
     // jQuery AJAX call for JSON
     $.getJSON('/cart/cartlist', function (data) {
@@ -41,14 +42,18 @@ function populateCart() {
                 '</div>' +
                 '</th>' +
                 '<td class="border-0 align-middle"><strong>' + this.description + '</strong></td>' +
+                '<td class="border-0 align-middle"><strong>'+ this.qtd +'</strong></td>' +
                 '<td class="border-0 align-middle"><strong>$' + this.price + '.00</strong></td>' +
-                '<td class="border-0 align-middle"><strong>1</strong></td>' +
                 '<td class="border-0 align-middle"><a href="#" class="text-danger btnDeleteGunCart" rel="' + this._id + '" ><i class="fa fa-trash"></i></a></td>' +
-                '</tr>'
+                '</tr>';
+            newTotalPrice += parseInt(this.price);
         });
 
         // Inject the whole content string into our existing HTML table
         $('#cartList table tbody').html(cartTableContent);
+
+        // Update the total price of the cart
+        $('#cartTotalPrice').html("Total: $"+newTotalPrice+".00");
 
     });
 };
@@ -191,7 +196,7 @@ function checkOutCart() {
                     populateCart();
 
                 });
-
+                populateCart();
                 populateTable();
             }
         });
