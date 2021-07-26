@@ -1,15 +1,13 @@
 # 1. Requirements
-* Must be capable of selling firearms. Clients must be able to filter the catalog by configuration and function.
-* Firearm configurations are: handguns, rifles, shotguns, carbines, machine guns, sniper rifles, submachine guns, automatic rifles, assault rifles, PDWs, battle rifles.
-* Firearm types are: manual, semi, auto.
-* The firearms' records must also include: mass, length, barrel length, cartridge, caliber, action, rate of fire, muzzle velocity, effective firing range, maximum firing range, feed system, sights, manufacturer.
+* Must be capable of selling firearms. Clients must be able to filter the catalog by the type of the weapon.
+* Firearm configurations are: id, name, number, type, price, qtd, description.
+* Firearm types are: manual, semi, auto. New types can be added, but won't be filtered.
 * The specific functionality of our application is having a button that simulates the trigger of the firearm, playing its firing sound.
 * This store is completely legal, in the sense that selling military-grade weapons to civilians is assumed to be completely legal.
 
 # 2. Project Description
-The online store contains the following pages (you can find the old Figma <a href="https://www.figma.com/file/G66aRUbO65k8scSnY9moq2/online-store?node-id=0%3A1">here</a>):
-The online store legally sells military-grade firearms.
-All the pages contain the same footer and header.
+The online store contains the following page (you can find the old Figma <a href="https://www.figma.com/file/G66aRUbO65k8scSnY9moq2/online-store?node-id=0%3A1">here</a>):
+It is a single-page web app, thus everything can be done without the need for a reload of the page, or moving to a different page.
 
 **CTA**
 
