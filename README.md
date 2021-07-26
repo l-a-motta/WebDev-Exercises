@@ -73,13 +73,22 @@ TODO description, image, contents
 TODO description, image, contents
 
 # 3. Comments about the code
+Code comments were made internally. Check each file if you wish.
 
 # 4. Test Plan
+A run-down of the whole website and all the features offered. You can check it in the video file testing_functions.mp4
 
 # 5. Test Results
+Tests were all successful. No bugs were detected and application behaved as expected.
 
 # 6. Build Procedures
 
+You will need a local mongodb database setup. The application uses two collections: 'usercollections' and 'cart', under the database named 'online-store'. If you have a different database, just change the name in the app.js where appropriate. The collections must be named as such, otherwise you will need to update all the db calls in the /routes/ directory.
+
+After setting up your mongodb database, install the dependencies from node by running 'npm install' in the directory with package.json in it. Then, simply run 'npm start' on the same directory. It should be live in your localhost:3000.
+
 # 7. Problems
+The app will not scale well. It saves all the return from the database in a vector, read from a JSON. If it had millions of entries, it would be quite heavy and load slowly. A possible fix to this would be to include pagination in the website.
 
 # 8. Comments
+This app was not divided into the MVC format, nor is it expandable. It should not be used as a framework or base to work off of. It does the requirements detailed above, and nothing else. It could be used as a resource for learning, but not for actual deployment in a bigger project.
