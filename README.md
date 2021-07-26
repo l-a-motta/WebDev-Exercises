@@ -56,7 +56,7 @@ Code comments were made internally. Check each file if you wish.
 A run-down of the whole website and all the features offered. You can check it in the video file testing_functions.mp4
 
 # 5. Test Results
-Tests were all successful. No bugs were detected and application behaved as expected.
+Tests were all successful. One bug was detected (you can see a Confirm message repeating at the end of the video), but that was squashed. It was happening because we were adding an event to the button every time the Cart was shown, but now we only add one event once the doc is ready.
 
 # 6. Build Procedures
 
